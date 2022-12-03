@@ -14,7 +14,7 @@ export const loadTodos = async () => {
 }
 
 export const addTodo = async (text, user_id) => {
-    const { data, error } = await supabase.from('todos').insert([{ text, completed: false, user_id }])
+    const { data, error } = await supabase.from('todos').insert([{ text, completed: false, user_id }]).select();
 
     if (error) {
         return console.error(error)
