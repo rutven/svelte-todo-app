@@ -1,5 +1,5 @@
 <script>
-	import { deleteTodo, todos, toggleTodoComplete } from "../stores/TodoStore";
+	import { deleteTodo, toggleTodoComplete } from "../stores/TodoStore";
 
 export let todo;
 
@@ -10,7 +10,7 @@ export let todo;
         name="completed"
         type="checkbox"
         checked={todo.completed}
-        on:change={() => toggleTodoComplete(todo.id)}
+        on:change={() => toggleTodoComplete(todo.id, todo.completed)}
         class="mr-2 form-checkbox h-5 w-5"
         />
     <span 
